@@ -5,18 +5,18 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.util.Map;
+import java.util.List;
 
 @Component
 @RequiredArgsConstructor
 public class AppRunner implements CommandLineRunner {
-    private final Map<String, Calcable> calcKeeper;
+    private final List<Calcable> list;
 
     @Override
     public void run(String... args) throws Exception {
         System.out.println("");
-        calcKeeper.keySet().forEach(System.out::println);
+        list.forEach(System.out::println);
         System.out.println("");
-        calcKeeper.values().forEach(Calcable::calculate);
+        list.forEach(Calcable::calculate);
     }
 }
